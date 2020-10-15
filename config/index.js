@@ -2,7 +2,9 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-export default {
-    port : process.env.PORT,
-    databaseURL : process.env.DATABASE_URI,
+const config = {
+    PORT : process.env.PORT,
+    DATABASE_HOST : process.env.DATABASE_URI,
 }
+
+module.exports = config;
