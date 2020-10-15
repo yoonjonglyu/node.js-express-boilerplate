@@ -1,6 +1,8 @@
-import expressLoader from './express';
+const expressLoader = require('./express');
 
-export default async ({ expressApp }) => {
+const init  = async ({ expressApp }) => {
     await expressLoader({ app : expressApp });
     console.log('Express Intialize');
 }
+
+exports.init = init;
