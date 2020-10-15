@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const expressMiddleWare = async ({ app }) => {
     app.get('/status', (req, res) => { res.status(200).end(); });
@@ -12,7 +13,7 @@ const expressMiddleWare = async ({ app }) => {
     // parse application/x-www-form-urlencoded
     app.use(express.urlencoded({ extended: true }));
     // use cookie parser for secure httpOnly cookie
-    //app.use(express.cookieParser(process.env.COOKIE_SECRET));
+    app.use(cookieParser(process.env.COOKIE_SECRET));
     //app.use(express.static(path.join(__dirname, 'public')));
     return app;
 };
