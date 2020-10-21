@@ -15,7 +15,7 @@ const expressMiddleWare = async ({ app }) => {
     app.use(express.urlencoded({ extended: true }));
     // use cookie parser for secure httpOnly cookie
     app.use(cookieParser(process.env.COOKIE_SECRET));
-    app.use(express.static(path.join(__dirname, '../','public')));
+    app.use('/static', express.static(path.join(__dirname, '../','public')));
 
     return app;
 };
